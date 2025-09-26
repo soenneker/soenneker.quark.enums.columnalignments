@@ -1,6 +1,6 @@
 ﻿using Intellenum;
 
-namespace Soenneker.Quark.Enums.ColumnAlignments;
+namespace Soenneker.Quark;
 
 /// <summary>
 /// An enumeration for Quark, representing Bootstrap flexbox column alignment values.
