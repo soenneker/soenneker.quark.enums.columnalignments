@@ -7,7 +7,7 @@ namespace Soenneker.Quark.Enums;
 /// This enum contains the standard Bootstrap alignment values used for column positioning.
 /// </summary>
 [Intellenum<string>]
-public partial class ColumnAlignmentTypeType
+public partial class ColumnAlignmentType
 {
     /// <summary>
     /// Align to the start (flex-start).
