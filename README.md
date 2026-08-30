@@ -1,28 +1,38 @@
 [![](https://img.shields.io/nuget/v/soenneker.quark.enums.columnalignments.svg?style=for-the-badge)](https://www.nuget.org/packages/soenneker.quark.enums.columnalignments/)
+[![](https://img.shields.io/github/actions/workflow/status/soenneker/soenneker.quark.enums.columnalignments/build-and-test.yml?style=for-the-badge)](https://github.com/soenneker/soenneker.quark.enums.columnalignments/actions/workflows/build-and-test.yml)
 [![](https://img.shields.io/github/actions/workflow/status/soenneker/soenneker.quark.enums.columnalignments/publish-package.yml?style=for-the-badge)](https://github.com/soenneker/soenneker.quark.enums.columnalignments/actions/workflows/publish-package.yml)
 [![](https://img.shields.io/nuget/dt/soenneker.quark.enums.columnalignments.svg?style=for-the-badge)](https://www.nuget.org/packages/soenneker.quark.enums.columnalignments/)
 [![](https://img.shields.io/github/actions/workflow/status/soenneker/soenneker.quark.enums.columnalignments/codeql.yml?label=CodeQL&style=for-the-badge)](https://github.com/soenneker/soenneker.quark.enums.columnalignments/actions/workflows/codeql.yml)
 
 # Soenneker.Quark.Enums.ColumnAlignments
 
-Cross-axis self-alignment values for grid or flex children.
+Strongly named cross-axis self-alignment values for grid and flex children.
 
-## Install
+## Installation
 
 ```bash
 dotnet add package Soenneker.Quark.Enums.ColumnAlignments
 ```
 
-## What you get
+## Usage
 
-- `ColumnAlignmentType` — Cross-axis self-alignment values for grid or flex children.
+```csharp
+using Soenneker.Quark;
 
-## API at a glance
+ColumnAlignmentType alignment = ColumnAlignmentType.Center;
+string value = alignment.Value;
+// center
 
-| API | What it does | Result / important behavior |
+string tailwindClass = $"self-{alignment.Value}";
+// self-center
+```
+
+| Value | `.Value` | Tailwind utility |
 | --- | --- | --- |
-| `ColumnAlignmentType.Start` | Align to the start (flex-start). CSS/Tailwind token: self-start. | Align to the start (flex-start). CSS/Tailwind token: self-start. |
-| `ColumnAlignmentType.Center` | Align to the center. CSS/Tailwind token: self-center. | Align to the center. CSS/Tailwind token: self-center. |
-| `ColumnAlignmentType.End` | Align to the end (flex-end). CSS/Tailwind token: self-end. | Align to the end (flex-end). CSS/Tailwind token: self-end. |
-| `ColumnAlignmentType.Stretch` | Stretch to fill the container. CSS/Tailwind token: self-stretch. | Stretch to fill the container. CSS/Tailwind token: self-stretch. |
-| `ColumnAlignmentType.Baseline` | Align to the baseline. CSS/Tailwind token: self-baseline. | Align to the baseline. CSS/Tailwind token: self-baseline. |
+| `Start` | `start` | `self-start` |
+| `Center` | `center` | `self-center` |
+| `End` | `end` | `self-end` |
+| `Stretch` | `stretch` | `self-stretch` |
+| `Baseline` | `baseline` | `self-baseline` |
+
+The stored value is the alignment suffix, not the full Tailwind class. This makes the type usable in component logic as well as utility-class composition.
